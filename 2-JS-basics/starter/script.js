@@ -88,3 +88,49 @@ console.log(typeof x);
 /*******************************
  * Operator Precedence
  */
+/*
+var now = 2019;
+var yearJohn = 1989;
+var fullAge = 18;
+
+// Multiple operators
+var isFullAge = now - yearJohn >= fullAge; // true
+console.log(isFullAge);
+
+// Grouping
+var ageJohn = now - yearJohn;
+var ageMark = 35;
+var average = (ageJohn + ageMark) / 2;
+console.log(average);
+
+// Multiple assignments
+var x, y;
+x = y = (3 + 5) * 4 - 6; // 26
+console.log(x, y);
+
+x *= 2;
+console.log(x);
+x += 10;
+console.log(x);
+x++;
+console.log(x);
+*/
+
+/************************************
+ * Coding Challenge 1
+ */
+var johnHeight = 1.53;
+var markHeight = 1.80;
+
+var johnMass = 70;
+var markMass = 85;
+
+var johnBMI = johnMass / johnHeight**2;
+var markBMI = markMass / markHeight**2;
+
+console.log(markBMI, johnBMI); // Error check
+
+var markHigherBMI = markBMI > johnBMI;
+
+console.log('Is Mark\'s BMI higher than John\'s? ' + 
+            markHigherBMI);
