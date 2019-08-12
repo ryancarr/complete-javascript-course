@@ -200,3 +200,123 @@ else
     console.log(firstName + ' is a man.');
 */
 
+/****************************************
+ * Ternary Operator and Switch statements
+ */
+/*
+var firstName = 'John';
+var age = 16;
+
+age >= 18 ? console.log(firstName + ' drinks beer.')
+: console.log(firstName + ' drinks juice.');
+
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(firstName + ' drinks ' + drink + '.');
+
+// Switch statements
+var job = 'instructor';
+
+switch(job)
+{
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teaches kids how to code.');
+        break;
+    case 'driver':
+        console.log(firstName + ' drives an uber.');
+        break;
+    case 'designer':
+        console.log(firstName + ' designs websites.');
+        break;
+    default:
+        console.log(firstName + ' does something else.');
+}
+
+switch(true)
+{
+    case age < 13:
+        console.log(firstName + ' is a boy.');
+        break;
+    case age >= 13 && age < 20:
+        console.log(firstName + ' is a teenager.');
+        break;
+    case age >= 20 && age < 30:
+        console.log(firstName + ' is a young man.');
+        break;
+    default:
+        console.log(firstName + ' is a man.');
+}
+*/
+
+/*********************
+ * Truthy and Falsy
+ */
+
+ // Falsy values : undefined, null, 0, '', NaN
+ // truthy values: NOT falsy
+/*
+ var height;
+ height = 23;
+
+ if(height || height === 0)
+    console.log('Variable is defined.');
+else
+    console.log('Variable is not defined.');
+
+// Equality operators
+if(height == '23')
+    console.log('The == operator does type coercion!');
+*/
+
+/*********************************
+ * Coding Challenge 2
+ * 
+ * John and Mike both play basketball in different
+ * teams. In the latest 3 games, John's team scored
+ * 89, 120, and 103 points, while Mike's team scored
+ * 116, 94, and 123 points.
+ * 
+ * 1. Calculate the average score for both teams
+ * 2. Decide which team wins based on average score
+ * (print winner to console along with the score)
+ * 3. Change the score to show a different winner
+ * 
+ * 4. Extra: Mary also plays basketball and her team
+ * scored 97, 134 and 105 points. Log the average
+ * winner to the console.
+ * 
+ * 5. Change thes cores to generate different winners
+ */
+
+ var johnScores = [110, 120, 103];
+ var mikeScores = [116, 94, 123];
+ var maryScores = [97, 134, 105];
+
+ var johnAverage = (johnScores[0] + johnScores[1] + johnScores[2]) / 3;
+ var mikeAverage = (mikeScores[0] + mikeScores[1] + mikeScores[2]) / 3;
+ var maryAverage = (maryScores[0] + maryScores[1] + maryScores[2]) / 3;
+
+ switch(true)
+ {
+     case johnAverage > mikeAverage && johnAverage > maryAverage:
+         console.log('John\'s team had the highest average at: ' + johnAverage);
+         break;
+    case johnAverage < mikeAverage && mikeAverage > maryAverage:
+        console.log('Mike\'s team had the highest average at: ' + mikeAverage);
+        break;
+    case johnAverage < maryAverage && mikeAverage < maryAverage:
+        console.log('Mary\'s team had the highest average at: ' + maryAverage);
+        break;
+    case johnAverage === mikeAverage && johnAverage > maryAverage:
+        console.log('John and Mike tied with : ' + johnAverage + ' points scored.');
+        break;
+    case johnAverage === maryAverage && johnAverage > mikeAverage:
+        console.log('John and Mary tied with : ' + johnAverage + ' points scored.');
+        break;
+    case mikeAverage === mikeAverage && maryAverage > johnAverage:
+        console.log('Mike and Mary tied with : ' + mikeAverage + ' points scored.');
+        break;
+    case mikeAverage === maryAverage && maryAverage === johnAverage:
+        console.log('John, Mike and Mary tied with : ' + mikeAverage + ' points scored.');
+        break;
+ }
