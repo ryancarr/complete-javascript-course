@@ -287,17 +287,17 @@ if(height == '23')
  * 
  * 5. Change thes cores to generate different winners
  */
+/*
+var johnScores = [110, 120, 103];
+var mikeScores = [116, 94, 123];
+var maryScores = [97, 134, 105];
 
- var johnScores = [110, 120, 103];
- var mikeScores = [116, 94, 123];
- var maryScores = [97, 134, 105];
+var johnAverage = (johnScores[0] + johnScores[1] + johnScores[2]) / 3;
+var mikeAverage = (mikeScores[0] + mikeScores[1] + mikeScores[2]) / 3;
+var maryAverage = (maryScores[0] + maryScores[1] + maryScores[2]) / 3;
 
- var johnAverage = (johnScores[0] + johnScores[1] + johnScores[2]) / 3;
- var mikeAverage = (mikeScores[0] + mikeScores[1] + mikeScores[2]) / 3;
- var maryAverage = (maryScores[0] + maryScores[1] + maryScores[2]) / 3;
-
- switch(true)
- {
+switch(true)
+{
      case johnAverage > mikeAverage && johnAverage > maryAverage:
          console.log('John\'s team had the highest average at: ' + johnAverage);
          break;
@@ -319,4 +319,37 @@ if(height == '23')
     case mikeAverage === maryAverage && maryAverage === johnAverage:
         console.log('John, Mike and Mary tied with : ' + mikeAverage + ' points scored.');
         break;
- }
+}
+*/
+/*************************************************
+ * Functions
+ */
+function calculateAge(birthYear)
+{
+    return 2019 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+console.log(ageJohn);
+console.log(ageMike);
+console.log(ageJane);
+
+// DRY - Don't Repeat Yourself
+
+function yearsUntilRetirement(year, firstName)
+{
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+
+    if(retirement > 0)
+        console.log(firstName + ' retires in ' +
+        retirement + ' years.');
+    else
+        console.log(firstName + ' is already retired.');
+}
+
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1969, 'Jane');
