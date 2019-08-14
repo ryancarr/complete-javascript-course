@@ -359,9 +359,9 @@ yearsUntilRetirement(1969, 'Jane');
  * Function expression
  */
 
- // Expressions return a single value
+// Expressions return a single value
 // Statements perform an action
-
+/*
 var whatDoYouDo = function(job, firstName)
 {
     switch(job)
@@ -380,4 +380,32 @@ var whatDoYouDo = function(job, firstName)
 console.log(whatDoYouDo('teacher', 'John'));
 console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('retired', 'Mark'));
+*/
 
+/*************************************
+ * Arrays
+ */
+
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names);
+
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'teacher', false];
+john.push('blue');
+john.unshift('Mr');
+console.log(john);
+john.pop();
+console.log(john);
+john.shift()
+console.log(john);
+
+console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf('designer') === -1 ?
+'John is NOT a designer.' : 'John IS a designer.';
+console.log(isDesigner);
