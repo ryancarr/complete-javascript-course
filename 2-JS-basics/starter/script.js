@@ -385,7 +385,7 @@ console.log(whatDoYouDo('retired', 'Mark'));
 /*************************************
  * Arrays
  */
-
+/*
 var names = ['John', 'Mark', 'Jane'];
 var years = new Array(1990, 1969, 1948);
 
@@ -409,3 +409,27 @@ console.log(john.indexOf(23));
 var isDesigner = john.indexOf('designer') === -1 ?
 'John is NOT a designer.' : 'John IS a designer.';
 console.log(isDesigner);
+*/
+
+function calculateTip(bills)
+{
+    var total = new Array();
+    
+    bills.forEach(element =>
+    {
+        if(element < 50)
+            total.push(element + (element * .2));
+        else if(50 <= element && element <= 200)
+            total.push(element + (element * .15));
+        else
+            total.push(element + (element * .1));        
+    });
+
+    return total;
+}
+
+var bills = [124, 48, 268];
+var totals = calculateTip(bills);
+
+console.log(bills);
+console.log(totals);
