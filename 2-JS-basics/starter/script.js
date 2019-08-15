@@ -411,6 +411,10 @@ var isDesigner = john.indexOf('designer') === -1 ?
 console.log(isDesigner);
 */
 
+/***********************************************
+ * Code Challenge 3
+ */
+
 function calculateTip(bills)
 {
     var total = new Array();
