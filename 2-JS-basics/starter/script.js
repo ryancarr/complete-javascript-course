@@ -414,7 +414,7 @@ console.log(isDesigner);
 /***********************************************
  * Code Challenge 3
  */
-
+/*
 function calculateTip(bills)
 {
     var total = new Array();
@@ -437,3 +437,33 @@ var totals = calculateTip(bills);
 
 console.log(bills);
 console.log(totals);
+*/
+
+/******************************
+ * Objects
+ */
+
+ // Object Literal
+var john = 
+{
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+}
+
+console.log(john.firstName + ' ' +
+            john['lastName']);
+
+john.job = 'designer';
+john.isMarried = true;
+console.log(john);
+
+// new Object Syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane.lastName = 'Smith';
+console.log(jane);
