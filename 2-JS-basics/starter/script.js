@@ -494,7 +494,7 @@ console.log(john.age);
 /*****************************
  * Coding Challenge 4
  */
-
+/*
 var john = 
 {
     fullName: 'John Smith',
@@ -518,14 +518,38 @@ var mark =
         return this.bmi;
     }
 };
-john.calcBMI();
-mark.calcBMI();
 
 console.log(mark, john);
 
-var markHigherBMI = mark.bmi > john.bmi;
+var markHigherBMI = mark.calcBMI() > john.calcBMI();
 
 if(markHigherBMI)
     console.log('Mark\'s BMI is higher than John\'s.');
 else
     console.log('John\'s BMI is higher than Mark\'s.');
+*/
+
+/*******************************
+ * Loops and Iteration
+ */
+// Display every number from 0 to 9
+for(var i = 0; i < 10; i++)
+{
+    console.log(i);
+}
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+for(var i = 0; i < john.length; i++)
+{
+    console.log(john[i]);
+}
+
+var i = 0;
+while(i < john.length)
+{
+    if(typeof john[i] === 'string')
+        console.log(john[i]);
+    i++;
+}
+
