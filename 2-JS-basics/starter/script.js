@@ -442,7 +442,7 @@ console.log(totals);
 /******************************
  * Objects
  */
-
+/*
  // Object Literal
 var john = 
 {
@@ -467,3 +467,24 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane.lastName = 'Smith';
 console.log(jane);
+*/
+
+/**************************
+ * Objects and Methods
+ */
+var john = 
+{
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function()
+    {
+        this.age = 2019 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john.age);
