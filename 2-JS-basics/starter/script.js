@@ -472,6 +472,7 @@ console.log(jane);
 /**************************
  * Objects and Methods
  */
+/*
 var john = 
 {
     firstName: 'John',
@@ -488,3 +489,43 @@ var john =
 
 john.calcAge();
 console.log(john.age);
+*/
+
+/*****************************
+ * Coding Challenge 4
+ */
+
+var john = 
+{
+    fullName: 'John Smith',
+    height: 1.53,
+    mass: 70,
+    calcBMI: function()
+    {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+var mark =
+{
+    fullName: 'Mark Miller',
+    height: 1.80,
+    mass: 85,
+    calcBMI: function()
+    {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+john.calcBMI();
+mark.calcBMI();
+
+console.log(mark, john);
+
+var markHigherBMI = mark.bmi > john.bmi;
+
+if(markHigherBMI)
+    console.log('Mark\'s BMI is higher than John\'s.');
+else
+    console.log('John\'s BMI is higher than Mark\'s.');
