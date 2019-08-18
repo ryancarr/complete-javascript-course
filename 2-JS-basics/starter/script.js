@@ -467,9 +467,6 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane.lastName = 'Smith';
 console.log(jane);
-<<<<<<< HEAD
-*/
-=======
 */
 
 /**************************
@@ -535,6 +532,7 @@ else
 /*******************************
  * Loops and Iteration
  */
+/*
 // Display every number from 0 to 9
 for(var i = 0; i < 10; i++)
 {
@@ -555,5 +553,90 @@ while(i < john.length)
         console.log(john[i]);
     i++;
 }
+*/
 
->>>>>>> 6b119d37903b84eb2a6946423edbd31833c6c6e8
+/***********************************************
+ * Coding Challenge 5
+ */
+var john = 
+{
+    bills: [124, 48, 268, 180, 42],
+    tips: [],
+    totals: [],
+    calculateTip: function()
+    {
+        for(var i = 0; i < this.bills.length; i++)
+        {
+            if(this.bills[i] < 50)
+            {
+                this.tips[i] = this.bills[i] * .2;
+                this.totals[i] = this.tips[i] + this.bills[i];
+            }
+            else if(50 <= this.bills[i] && this.bills[i] <= 200)
+            {
+                this.tips[i] = this.bills[i] * .15;
+                this.totals[i] = this.tips[i] + this.bills[i];                
+            }
+            else
+            {
+                this.tips[i] = this.bills[i] * .1;
+                this.totals[i] = this.tips[i] + this.bills[i];
+            }
+        }
+    }
+};
+
+var mark = 
+{
+    bills: [77, 375, 110, 45],
+    tips: [],
+    totals: [],
+    calculateTip: function()
+    {
+        for(var i = 0; i < this.bills.length; i++)
+        {
+            if(this.bills[i] < 100)
+            {
+                this.tips[i] = this.bills[i] * .2;
+                this.totals[i] = this.tips[i] + this.bills[i];
+            }
+            else if(100 <= this.bills[i] && this.bills[i] <= 300)
+            {
+                this.tips[i] = this.bills[i] * .10;
+                this.totals[i] = this.tips[i] + this.bills[i];                
+            }
+            else
+            {
+                this.tips[i] = this.bills[i] * .25;
+                this.totals[i] = this.tips[i] + this.bills[i];
+            }
+        }
+    }
+};
+
+function averageTip(tips)
+{
+    var sum = 0;
+    for(var i = 0; i < tips.length; i++)
+    {
+        sum += tips[i];
+    }
+
+    return sum / tips.length;
+}
+
+john.calculateTip();
+mark.calculateTip();
+console.log(john, mark);
+
+var johnAverage = averageTip(john.tips);
+var markAverage = averageTip(mark.tips);
+
+if(markAverage > johnAverage)
+{
+    console.log('Mark\'s family paid more for average tips.');
+}
+else if (johnAverage > markAverage)
+{
+    console.log('John\'s family paid more for average tips.');
+}
