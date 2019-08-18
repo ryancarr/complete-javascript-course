@@ -1,6 +1,6 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
-
+/*
 calculateAge(1990);
 
 function calculateAge(year)
@@ -30,7 +30,7 @@ function foo()
 
 foo();
 console.log(age);
-
+*/
 
 ///////////////////////////////////////
 // Lecture: Scoping
@@ -81,12 +81,45 @@ function third() {
 
 ///////////////////////////////////////
 // Lecture: The this keyword
+/*
+console.log(this); // The global Obj or Window
 
+calculateAge(1983);
 
+function calculateAge(year)
+{
+    console.log(2019-year);
+    console.log(this); // This is still global Obj
+}
 
+var john = 
+{
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function()
+    {
+        console.log(this); // John object
+        console.log(2019 - this.yearOfBirth);
 
+        function innerFunction()
+        {
+            console.log(this); // Back to global Obj
+        }
 
+        innerFunction();
+    }
+};
 
+john.calculateAge();
 
+var mike = 
+{
+    name: 'Mike',
+    yearOfBirth: 1984
+};
 
+// Function borrowing
+mike.calculateAge = john.calculateAge;
 
+mike.calculateAge();
+*/
