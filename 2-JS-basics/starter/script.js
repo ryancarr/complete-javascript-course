@@ -442,7 +442,7 @@ console.log(totals);
 /******************************
  * Objects
  */
-
+/*
  // Object Literal
 var john = 
 {
@@ -467,3 +467,4 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane.lastName = 'Smith';
 console.log(jane);
+*/
