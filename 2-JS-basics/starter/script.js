@@ -467,4 +467,93 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane.lastName = 'Smith';
 console.log(jane);
+<<<<<<< HEAD
 */
+=======
+*/
+
+/**************************
+ * Objects and Methods
+ */
+/*
+var john = 
+{
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function()
+    {
+        this.age = 2019 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john.age);
+*/
+
+/*****************************
+ * Coding Challenge 4
+ */
+/*
+var john = 
+{
+    fullName: 'John Smith',
+    height: 1.53,
+    mass: 70,
+    calcBMI: function()
+    {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+var mark =
+{
+    fullName: 'Mark Miller',
+    height: 1.80,
+    mass: 85,
+    calcBMI: function()
+    {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+console.log(mark, john);
+
+var markHigherBMI = mark.calcBMI() > john.calcBMI();
+
+if(markHigherBMI)
+    console.log('Mark\'s BMI is higher than John\'s.');
+else
+    console.log('John\'s BMI is higher than Mark\'s.');
+*/
+
+/*******************************
+ * Loops and Iteration
+ */
+// Display every number from 0 to 9
+for(var i = 0; i < 10; i++)
+{
+    console.log(i);
+}
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+for(var i = 0; i < john.length; i++)
+{
+    console.log(john[i]);
+}
+
+var i = 0;
+while(i < john.length)
+{
+    if(typeof john[i] === 'string')
+        console.log(john[i]);
+    i++;
+}
+
+>>>>>>> 6b119d37903b84eb2a6946423edbd31833c6c6e8
