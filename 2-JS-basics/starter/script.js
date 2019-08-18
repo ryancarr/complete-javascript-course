@@ -629,14 +629,14 @@ john.calculateTip();
 mark.calculateTip();
 console.log(john, mark);
 
-var johnAverage = averageTip(john.tips);
-var markAverage = averageTip(mark.tips);
+john.average = averageTip(john.tips);
+mark.average = averageTip(mark.tips);
 
-if(markAverage > johnAverage)
+if(mark.average > john.average)
 {
     console.log('Mark\'s family paid more for average tips.');
 }
-else if (johnAverage > markAverage)
+else if (john.average > mark.average)
 {
     console.log('John\'s family paid more for average tips.');
 }
