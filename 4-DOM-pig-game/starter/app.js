@@ -8,3 +8,15 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+
+/********************************************************************************************
+ * Things I need to tackle...
+ * An object for each player to hold their data
+ *  - Player name
+ *  - Player Round score
+ *  - Player Global score
+ * A way to tell who's turn it is
+ * Link the buttons to listeners
+ * Dice Roll function
+ * Update game status function
+ */
