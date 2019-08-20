@@ -20,3 +20,7 @@ GAME RULES:
  * Dice Roll function
  * Update game status function
  */
+function getRandom(number)
+{
+    return Math.floor(Math.random() * 6) + 1;
+}
