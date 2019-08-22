@@ -47,33 +47,36 @@ document.querySelector('.btn-roll').addEventListener('click', rollDice);
 
 function hold()
 {
-    if(activePlayer === 0)
+    if(gamePlaying)
     {
-        playerOnePanel.classList.remove('active');
-        playerTwoPanel.classList.add('active');
+        if(activePlayer === 0)
+        {
+            playerOnePanel.classList.remove('active');
+            playerTwoPanel.classList.add('active');
 
-        playerOneGlobalScore.textContent = roundScore;
-        playerOneRoundScore.textContent = 0;
-        roundScore = 0;
+            playerOneGlobalScore.textContent = parseInt(playerOneGlobalScore.textContent) + roundScore;
+            playerOneRoundScore.textContent = 0;
+            roundScore = 0;
 
-        document.querySelector('.dice').style.display = 'none';
-        document.querySelector('.dice').src = '';
+            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.dice').src = '';
 
-        activePlayer = 1;
-    }
-    else
-    {
-        playerOnePanel.classList.add('active');
-        playerTwoPanel.classList.remove('active');
+            activePlayer = 1;
+        }
+        else
+        {
+            playerOnePanel.classList.add('active');
+            playerTwoPanel.classList.remove('active');
 
-        playerTwoGlobalScore.textContent = roundScore;
-        playerTwoRoundScore.textContent = 0;
-        roundScore = 0;
+            playerTwoGlobalScore.textContent = parseInt(playerTwoGlobalScore.textContent) + roundScore;
+            playerTwoRoundScore.textContent = 0;
+            roundScore = 0;
 
-        document.querySelector('.dice').style.display = 'none';
-        document.querySelector('.dice').src = '';
+            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.dice').src = '';
 
-        activePlayer = 0;
+            activePlayer = 0;
+        }
     }
 }
 
@@ -108,6 +111,7 @@ function rollDice()
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = 'dice-' + roll + '.png';
 
+        // These nested if else statements could be greatly simplified
         if(roll === 1)
         {
             roundScore = 0;
@@ -121,9 +125,24 @@ function rollDice()
             {
                 playerOneRoundScore.textContent = roundScore;
                 
-                if(roundScore + playerOneGlobalScore.textContent >= MAX_SCORE)
+                if(roundScore + parseInt(playerOneGlobalScore.textContent) >= MAX_SCORE)
                 {
-                    playerOneGlobalScore.textContent += roundScore;
+                    playerOneGlobalScore.textContent = parseInt(playerOneGlobalScore.textContent) + roundScore;
+                    playerOnePanel.classList.toggle('active');
+                    playerOnePanel.classList.toggle('winner');
+                    gamePlaying = false;
+                }
+            }
+            else
+            {
+                playerTwoRoundScore.textContent = roundScore;
+                
+                if(roundScore + parseInt(playerTwoGlobalScore.textContent) >= MAX_SCORE)
+                {
+                    playerTwoGlobalScore.textContent = parseInt(playerTwoGlobalScore.textContent) + roundScore;
+                    playerTwoPanel.classList.toggle('active');
+                    playerTwoPanel.classList.toggle('winner');
+                    gamePlaying = false;  
                 }
             }
         }
