@@ -71,6 +71,9 @@ function init()
         // Set scores to 0
         document.getElementById('score-' + i).textContent = 0;
         document.getElementById('current-' + i).textContent = 0;
+
+        // Set name
+        document.getElementById('name-' + i).textContent = 'Player ' + (i + 1);
     }
 
     // Set player 1 panel to active
@@ -151,6 +154,7 @@ function checkWinner()
 
         // Set winner's panel to winner state
         document.querySelector('.player-' + winner + '-panel').classList.add('winner');
+        document.getElementById('name-' + winner).textContent = 'Winner!';
         // Set gamePlaying state to false so roll dice and hold button are disabled
         gamePlaying = false;
     }
