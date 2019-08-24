@@ -1,11 +1,8 @@
 // Change this value to change score required to win
 const MAX_SCORE = 25;
 
-// Create global variables and assign a starting value
-let activePlayer = 0;
-let gamePlaying = true;
-let roundScore = 0;
-let score = [0,0];
+// Create global variables
+let activePlayer, gamePlaying, roundScore, score;
 
 // Attach click event listeners to each button
 document.querySelector('.btn-new').addEventListener('click', init);
@@ -58,8 +55,9 @@ function hold()
 function init()
 {
     activePlayer = 0;
-    score = [0,0];
     gamePlaying = true;
+    roundScore = 0;
+    score = [0,0];
     
     // Loop over both players and remove winner and active states from the panels
     for(let i = 0; i < 2; i++)
