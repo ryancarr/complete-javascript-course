@@ -1,4 +1,5 @@
 // Function Constructor
+/*
 var Person = function(name, yearOfBirth, job)
 {
     this.name = name;
@@ -25,3 +26,6 @@ console.log(mark.name + ' is ' + mark.calculateAge() + ' years old.');
 console.log(john.name + ' ' + john.lastName);
 console.log(jane.name + ' ' + jane.lastName);
 console.log(mark.name + ' ' + mark.lastName);
+*/
+
+// 
